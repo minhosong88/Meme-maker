@@ -1,33 +1,52 @@
+const colorOptions = Array.from(
+    document.getElementsByClassName("color-option")
+);
 const canvas = document.querySelector("canvas");
-
+const color = document.getElementById("color");
+const lineWidth = document.getElementById("line-width");
 const ctx = canvas.getContext("2d");
 canvas.width = 800;
 canvas.height = 800;
-
-const colors = [
-    "#ff3838",
-    "#ffb8b8",
-    "#c56cf0",
-    "#ff9f1a",
-    "#fff200",
-    "#32ff7e",
-    "#7efff5",
-    "#7d5fff",
-    "#18dcff",
-]
-
-function onClick(event){
-    ctx.beginPath();
-    ctx.moveTo(event.offsetX, event.offsetY);
-    const color = colors[Math.floor(Math.random()*colors.length)];
-    ctx.strokeStyle=color;
-    ctx.stroke();
-    canvas.addEventListener("mousemove", onMove);
-}
+ctx.lineWidth= lineWidth.value;
+let isPainting = false;
 
 function onMove(event){
-    ctx.lineTo(event.offsetX, event.offsetY);
-    ctx.stroke();
+    if(isPainting){
+        ctx.lineTo(event.offsetX, event.offsetY);
+        ctx.stroke();
+        return;
+    }
+    ctx.moveTo(event.offsetX, event.offsetY);
+}
+function beginPainting(){
+    isPainting = true;
+}
+function cancelPaining(){
+    isPainting = false;
+    ctx.beginPath();
 }
 
-canvas.addEventListener("click", onClick);
+function onLineWidthChange(event){
+    ctx.lineWidth = event.target.value;
+}
+
+function onColorChange(event){
+    const inputColor = event.target.value;
+    const clickColor = event.target.dataset.color;
+    console.dir(event);
+    if(inputColor){
+        ctx.strokeStyle = ctx.fillStyle = inputColor;
+    } else{
+        color.value = ctx.strokeStyle = ctx.fillStyle = clickColor;
+    }
+}
+
+canvas.addEventListener("mousemove", onMove);
+canvas.addEventListener("mousedown", beginPainting);
+canvas.addEventListener("mouseup", cancelPaining);
+canvas.addEventListener("mouseleave",cancelPaining);
+
+lineWidth.addEventListener("change", onLineWidthChange);
+color.addEventListener("change", onColorChange);
+
+colorOptions.forEach(color=>color.addEventListener("click", onColorChange));
