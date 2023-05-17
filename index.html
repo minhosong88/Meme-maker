@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <canvas></canvas>
-    <input id="line-width" type = "range"  min ="1" max="10" value="5" step="0.1"/>
+    <div class="color-options">
     <input id = "color" type = "color" />
     <div class="color-option" 
         style="background-color:#1abc9c" 
@@ -44,6 +43,22 @@
     <div class="color-option" 
         style="background-color:#e67e22" 
         data-color="#e67e22"></div>
+    </div>
+    <canvas></canvas>
+   <div class="buttons">
+    <span>
+        <input id="line-width" type = "range"  min ="1" max="10" value="5" step="0.1"/>
+    </span>
+    <button id="mode-btn">Fill</button>
+    <button id="destroy-btn">Destroy</button>
+    <button id="erase-btn">Eraser</button>
+    <label for="file">
+        Add Photo
+        <input type="file" accept="image/*" id="file" />
+    </label>
+    <input type="text" placeholder="write and double click" id="text" />
+    <button id="save"> Save image</button>
+   </div>
     <script src="app.js"></script>
 </body>
 </html>
