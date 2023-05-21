@@ -1,0 +1,35 @@
+
+.color-option{
+    width: 80px;
+    height: 80px;
+    cursor:pointer;
+    border: 3px solid white;
+    transition: transform ease-in-out .3s;
+}
+.color-option:hover{
+    transform: scale(1.2);
+}
+.color-option:active{
+    border: 3px solid black;
+}
+
+.color-options{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:10px;
+    margin-right: 5px;
+}
+.color-options #color{
+    width: 80px;
+    height: 80px;
+    cursor:pointer;
+    border: 3px solid white;
+    transition: transform ease-in-out .3s;
+}
+
+.color_compartment{
+    display: flex;
+    flex-direction: row;
+    gap: none;
+}

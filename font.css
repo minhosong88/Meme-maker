@@ -72,5 +72,54 @@
 }
 .font_size button{
     font-size: 25px;
-        
+
+}
+
+.font {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:5px;
+}
+.font div:not([class="font-control-row"]){
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.font button{
+    background-color:white;
+    color:black;
+    padding: 5px;
+    border-radius: 0;
+    margin: 5px;
+    width: 50px;
+    height: 25px;
+}
+.font span{
+    display: flex;
+    width: 50px;
+    height: 25px;
+    font-weight: 700;
+    margin-left: 5px;
+    justify-content: flex-start;
+}
+
+.font_size {
+    display: block;
+}
+.shadow{
+    box-shadow: 0, 0, 3, 5, grey;
+}
+.buttons{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.yellow{
+    background-color: yellow; 
+    color: black;
 }

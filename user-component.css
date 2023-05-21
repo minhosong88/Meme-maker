@@ -1,0 +1,56 @@
+input#color{
+  background-color: white;
+}
+
+button, label{
+    all: unset;
+    text-align: center;
+    background-color: whitesmoke;
+    color:black;
+    border: 2px solid black;
+    cursor: pointer;
+    height: 80px;
+    width: 80px;
+    font-weight: 500;
+    transition: opacity linear .1s;
+    align-items: center;
+    margin-left: 5px;
+}
+
+button .fas{
+ font-size: 40px;
+}
+label{
+    display: flex;
+    flex-direction: column;
+    height: 80px;
+    width: 80px;    
+    align-items: center;
+    justify-content: center;
+}
+label .far{
+    font-size: 30px;
+}
+label:hover{
+    opacity: 0.5;
+}
+button:hover{
+    opacity: 0.5;
+}
+
+input#text{
+    all:unset;
+    padding: 10px 0;
+    font-weight: 500;
+    margin: 5px 0px 5px 5px;
+    width: 350px;
+    text-align: center;
+    background-color: white ;
+}
+input#file{
+    display: none;
+}
+
+#save .far{
+    font-size: 40px;
+}

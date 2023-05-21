@@ -104,13 +104,7 @@ const fontFunctions = {
     fontSize100:() =>{
         fontSize = "100px";
     },
-
 }
-// function setTextStyle(){
-//     ctx.font = `${fontStyle} ${fontWeight} ${fontSize} ${fontFamily}`;
-//     console.log()
-//     ctx.beginPath();
-// }
 
 function onDoubleClick(event){
     const text = textInput.value;
@@ -164,6 +158,7 @@ fontSize12.onclick = fontFunctions.fontSize12;
 fontSize30.onclick = fontFunctions.fontSize30;
 fontSize60.onclick = fontFunctions.fontSize60;
 fontSize100.onclick = fontFunctions.fontSize100;
+
 // let start = {x:0, y:0};
 // let end = {x:0, y:0};
 //ctx.clearRect(start.x, start.y,(end.x-start.x),(end.y-start.y));
