@@ -8,57 +8,146 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <div class="color-options">
-    <input id = "color" type = "color" />
-    <div class="color-option" 
-        style="background-color:#1abc9c" 
-        data-color="#1abc9c"></div>
-    <div class="color-option" 
-        style="background-color:#3498bd" 
-        data-color="#3498bd"></div>
-    <div class="color-option" 
-        style="background-color:#34495e" 
-        data-color="#34495e"></div>
-    <div class="color-option" 
-        style="background-color:#27ae60" 
-        data-color="#27ae60"></div>
-    <div class="color-option" 
-        style="background-color:#8e44ad" 
-        data-color="#8e44ad"></div>
-    <div class="color-option" 
-        style="background-color:#f1c40f" 
-        data-color="#f1c40f"></div>
-    <div class="color-option" 
-        style="background-color:#e74c3c" 
-        data-color="#e74c3c"></div>
-    <div class="color-option" 
-        style="background-color:#95a5a6" 
-        data-color="#95a5a6"></div>
-    <div class="color-option" 
-        style="background-color:#bdc3c7" 
-        data-color="#bdc3c7"></div>
-    <div class="color-option" 
-        style="background-color:#2ecc71" 
-        data-color="#2ecc71"></div>
-    <div class="color-option" 
-        style="background-color:#e67e22" 
-        data-color="#e67e22"></div>
-    </div>
-    <canvas></canvas>
-   <div class="buttons">
-    <span>
-        <input id="line-width" type = "range"  min ="1" max="10" value="5" step="0.1"/>
-    </span>
-    <button id="mode-btn">Fill</button>
-    <button id="destroy-btn">Destroy</button>
-    <button id="erase-btn">Eraser</button>
-    <label for="file">
-        Add Photo
-        <input type="file" accept="image/*" id="file" />
-    </label>
-    <input type="text" placeholder="write and double click" id="text" />
-    <button id="save"> Save image</button>
-   </div>
+    <header>
+        <h1>Meme Maker</h1>
+    </header>
+    <main>
+        <div class="color-options">
+            <input id = "color" type = "color" />
+            <div class="color_compartment">
+                <div class="color-option" 
+                    style="background-color:#1abc9c" 
+                    data-color="#1abc9c"></div>
+                <div class="color-option" 
+                    style="background-color:#3498bd" 
+                    data-color="#3498bd"></div>
+                <div class="color-option" 
+                    style="background-color:#34495e" 
+                    data-color="#34495e"></div>
+                <div class="color-option" 
+                    style="background-color:#f9a9a9" 
+                    data-color="#f9a9a9"></div>
+            </div>
+            <div class="color_compartment">
+                <div class="color-option" 
+                    style="background-color: #27ae60" 
+                    data-color="#27ae60"></div>
+                <div class="color-option" 
+                    style="background-color:#8e44ad" 
+                    data-color="#8e44ad"></div>
+                <div class="color-option" 
+                    style="background-color:#f1c40f" 
+                    data-color="#f1c40f"></div>
+                <div class="color-option" 
+                    style="background-color:#f2f200" 
+                    data-color="#f2f200"></div>
+            </div>
+            <div class="color_compartment">
+                <div class="color-option" 
+                    style="background-color:#e74c3c" 
+                    data-color="#e74c3c"></div>
+                <div class="color-option" 
+                    style="background-color:#bdc3c7" 
+                    data-color="#bdc3c7"></div>
+                <div class="color-option" 
+                    style="background-color:#2ecc71" 
+                    data-color="#2ecc71"></div>
+                <div class="color-option" 
+                    style="background-color:#e67e22" 
+                    data-color="#e67e22"></div>
+            </div>
+        </div>  
+        <canvas></canvas>
+        <div class="buttons">
+            <div class = "first-row">
+            <button title = "Fill" id="mode-btn">
+                <i class="fas fa-fill-drip fa-xl"></i>
+            </button>
+            <button title = "Reset" id="reset-btn">
+                <i class="fas fa-recycle"></i>
+            </button>
+            <button title = "Eraser" id="erase-btn"><i class="fas fa-eraser"></i></button>
+            </div>
+            <span class="control-row">
+                <input title = "Brush Size Control" 
+                id="line-width" 
+                type = "range"  
+                min ="1" 
+                max="10" 
+                value="5" 
+                step="0.1" 
+                list="markers" />
+                <span class="brush-value"></span>
+                <datalist id="markers">
+                    <option value="1"></option>
+                    <option value="3"></option>
+                    <option value="5"></option>
+                    <option value="7"></option>
+                    <option value="9"></option>
+                </datalist>
+            </span>
+           
+            <div class = "second-row">
+                <label title="Upload image"for="file">
+                    <i class="fas fa-plus"></i>
+                    <i class="far fa-images"></i>
+                    <input type="file" accept="image/*" id="file" />
+                </label>
+                <button title = "Save image" id="save"> 
+                    <i class="far fa-save"></i>
+                </button>
+            </div>
+            <input type="text" placeholder="Write and double click on Canvas" id="text" />
+            <div class="font">
+                <div class="font_family">
+                    <span>Font</span>
+                    <button title = "Serif" class="font_family-serif">A</button>
+                    <button title = "Nunito" class="font_family-nunito">A</button>
+                    <button title = "Times New Roman" class="font_family-timesNewRoman">A</button>
+                    <button title = "Georgia" class="font_family-georgia">A</button>
+                </div>
+                <div class="font_style">
+                    <span>Style</span>
+                    <button class="font_style-fill"><i class="fas fa-paint-brush"></i></button>
+                    <button class="font_style-stroke"><i class="fas fa-grip-lines-vertical"></i></button>
+                    <button class="font_style-bold">B</button>
+                    <button class="font_style-italic">B</button>
+                </div>
+                <div class="font_size">
+                    <span>Size</span>
+                    <button class="font_size-12">12</button>
+                    <button class="font_size-30">30</button>
+                    <button class="font_size-60">60</button>
+                    <button class="font_size-100">100</button>
+                </div>
+                <div class="font-control-row">
+                    <input class="font_size-control" 
+                    title = "Font Size Control"
+                    type="range" 
+                    min="12" 
+                    max="100" 
+                    value="30" 
+                    step="8"
+                    list="values" />
+                    <span class = "font-value"></span>
+                </div>
+                <datalist id="values">
+                    <option value="20"></option>
+                    <option value="40"></option>
+                    <option value="60"></option>
+                    <option value="80"></option>
+                    <option value="100"></option>
+                </datalist>
+            </div>
+            
+        </div>
+    </main> 
+   
     <script src="app.js"></script>
+    <script src="font.js"></script>
+    <script
+    src="https://kit.fontawesome.com/6478f529f2.js"
+    crossorigin="anonymous">
+    </script> 
 </body>
 </html>
