@@ -40,7 +40,7 @@
     align-items: center;
 }
 .font_family-timesNewRoman{
-    font-family: 'Times New Roman';
+    font-family: "Times New Roman";
     font-size: 25px;
     font-weight: 700;
     display: flex;

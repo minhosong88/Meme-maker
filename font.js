@@ -120,7 +120,7 @@ function onDoubleClick(event){
             fontFamily = "sans-serif";
         } else if(textInput.className ==="nunito"){
             fontFamily = "Nunito";
-        } else if(textInput.className ==="timeNewRoman"){
+        } else if(textInput.className ==="timesNewRoman"){
             fontFamily = "Times New Roman";
         }else if(textInput.className ==="georgia"){
             fontFamily = "Georgia";
