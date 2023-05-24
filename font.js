@@ -12,7 +12,7 @@ const fontSize12 = document.querySelector(".font_size-12");
 const fontSize30 = document.querySelector(".font_size-30");
 const fontSize60 = document.querySelector(".font_size-60");
 const fontSize100 = document.querySelector(".font_size-100");
-
+const fontRange = document.querySelector(".font_size-control");
 
 let isFillMode = true;
 let isSelected = false;
@@ -104,6 +104,10 @@ const fontFunctions = {
     fontSize100:() =>{
         fontSize = "100px";
     },
+    onFontChange:(event) => {
+        const fontValue = parseInt(event.target.value, 10);
+        fontSize = `${fontValue}px`;
+    }
 }
 
 function onDoubleClick(event){
@@ -159,25 +163,7 @@ fontSize30.onclick = fontFunctions.fontSize30;
 fontSize60.onclick = fontFunctions.fontSize60;
 fontSize100.onclick = fontFunctions.fontSize100;
 
-// let start = {x:0, y:0};
-// let end = {x:0, y:0};
-//ctx.clearRect(start.x, start.y,(end.x-start.x),(end.y-start.y));
-// ctx.strokeRect(start.x, start.y,(end.x-start.x),(end.y-start.y)); square
-//ctx.fillText(text, start.x, end.y); text in square
-// function onMouseDown(event){
-//     start = {x: event.offsetX, y:event.offsetY};
-//     isDrawing = true;
-
-// }
-// function onDrag(event){
-//     if(isDrawing){
-//         end = {x:event.offsetX, y:event.offsetY};   
-//         ctx.beginPath();
-
-//     }
-// }
-// canvas.addEventListener("mousedown", onMouseDown);
-// canvas.addEventListener("mousemove", onDrag);
+fontRange.addEventListener("change", fontFunctions.onFontChange);
 
 
 

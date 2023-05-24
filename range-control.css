@@ -8,7 +8,7 @@ input[type ="range"]{
     flex-direction: column;
     align-items: flex-end;
 }
-.first-row, .second-row{
+.first-row, .shape-row, .second-row{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -58,7 +58,7 @@ input[type ="range"]{
 .font-value{
     display: flex;
     justify-content: center;
-
+    align-items: center;
     width: 50px;
     margin: 5px;
     font-size: 20px;
@@ -108,10 +108,10 @@ input[type ="range"]{
     background-color: rgb(86, 85, 88);  
     outline: 2px solid rgb(14, 14, 14);  
 }
-.font-value{
+span.font-value{
     display: flex;
     justify-content: center;
-
+    align-items: center;
     width: 50px;
     margin: 5px;
     font-size: 20px;

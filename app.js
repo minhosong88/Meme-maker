@@ -1,19 +1,20 @@
+const ctx = canvas.getContext("2d");
+const CANVAS_HEIGHT = 800;
+const CANVAS_WIDTH = 800;
 const colorOptions = Array.from(
     document.getElementsByClassName("color-option")
 );
-
 const saveBtn = document.getElementById("save");
 const fileInput = document.getElementById("file");
 const modeBtn =document.getElementById("mode-btn");
 const resetBtn = document.getElementById("reset-btn");
 const eraseBtn = document.getElementById("erase-btn")
-const canvas = document.querySelector("canvas");
 const color = document.getElementById("color");
 const lineWidth = document.getElementById("line-width");
-const ctx = canvas.getContext("2d");
-const CANVAS_WIDTH = 800;
-const CANVAS_HEIGHT = 800;
+const squareBtn = document.getElementById("square-btn");
+const circleBtn = document.getElementById("circle-btn");
 const brushRange = document.getElementById("line-width");
+const canvas = document.querySelector("canvas");
 const changedValueBrush = document.querySelector(".brush-value");
 const FontRange = document.querySelector(".font_size-control");
 const chagedValueFont = document.querySelector(".font-value");
@@ -28,6 +29,13 @@ ctx.lineCap = "round";
 
 let isPainting = false;
 let isFilling = false;
+let isSquare = false;
+let isCircle = false;
+
+let start = {x:0, y:0};
+let end = {x:0, y:0};
+
+
 
 function onMove(event){
     if(isPainting){
@@ -136,3 +144,24 @@ fileInput.addEventListener("change",onFileChange);
 saveBtn.addEventListener("click", onSaveClick);
 brushRange.addEventListener("change", onRangeChangeBrush);
 FontRange.addEventListener("change",onRangeChangeFont);
+
+
+
+//ctx.clearRect(start.x, start.y,(end.x-start.x),(end.y-start.y));
+// ctx.strokeRect(start.x, start.y,(end.x-start.x),(end.y-start.y)); square
+//ctx.fillText(text, start.x, end.y); text in square
+// function onMouseDown(event){
+//     start = {x: event.offsetX, y:event.offsetY};
+//     isDrawing = true;
+
+// }
+// function onDrag(event){
+//     if(isDrawing){
+//         end = {x:event.offsetX, y:event.offsetY};   
+//         ctx.beginPath();
+
+//     }
+// }
+// canvas.addEventListener("mousedown", onMouseDown);
+// canvas.addEventListener("mousemove", onDrag);
+

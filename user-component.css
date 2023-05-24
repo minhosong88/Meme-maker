@@ -20,6 +20,11 @@ button, label{
 button .fas{
  font-size: 40px;
 }
+
+button .far{
+    font-size: 40px;
+}
+
 label{
     display: flex;
     flex-direction: column;
